@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Diagnóstico de Antonella</title>
+
+<style>
+body{
+    background:#0d0d0d;
+    color:#00ff88;
+    font-family:Consolas, monospace;
+    padding:40px;
+    font-size:22px;
+}
+
+#terminal{
+    white-space:pre-line;
+}
+
+.cursor{
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="terminal"></div>
+<span class="cursor">█</span>
+
+<script>
+const mensajes = [
+"INICIANDO DIAGNÓSTICO...",
+"",
+"Analizando turno en Papa Johns...",
+"",
+"Clientes intensos detectados ✓",
+"Energía de Antonella críticamente baja ✓",
+"Nivel de paciencia: 3% ✓",
+"Ganas de mimir: 99% ✓",
+"",
+"Generando reporte final...",
+"",
+"RESULTADO:",
+"",
+"Antonella tuvo un día pesadito :(",
+"",
+"Tratamiento recomendado:",
+"→ comida rica",
+"→ descansar",
+"→ muchos abracitos",
+"",
+"Buscando persona para cuidarla...",
+"",
+"Manuel.exe encontrado ✓",
+"",
+"Estado actual:",
+"Antonella sigue siendo la persona favorita de Manuel :)"
+];
+
+const terminal = document.getElementById("terminal");
+
+let i = 0;
+
+function escribir(){
+    if(i < mensajes.length){
+        terminal.innerHTML += mensajes[i] + "\n";
+        i++;
+        setTimeout(escribir, 1200);
+    }
+}
+
+escribir();
+</script>
+
+</body>
+</html>
